@@ -13,13 +13,14 @@ import java.sql.DriverManager;
  * @author Carla
  */
 public class Conexion {
-    public Conexion1()
+   public Conexion()
    {}
    public Connection getConexion(){
     Connection con=null;
        try {
            Class.forName("com.mysql.jdbc.Driver").newInstance();
-           con= DriverManager.getConnection("jdbc:mysql://localhost/ScrumProject, "root", "");
+           //nombre de la base de datos sera ScrumMaster
+           con= DriverManager.getConnection("jdbc:mysql://localhost/ScrumMaster", "root", "");
        } catch (Exception e) {
        }
      return con;
