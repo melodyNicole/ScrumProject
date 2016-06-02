@@ -5,6 +5,7 @@
  */
 package login;
 
+import scrumproject.Conexion;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -116,10 +117,10 @@ public class Login extends javax.swing.JFrame {
     private void botonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEntrarMouseClicked
         String usuario = textUsuario.getText();
         String contrasenia = new String(textContrasenia.getPassword());
-        Conexion conexion;
+        
         try {
-            conexion = new Conexion();
-            String mensaje = conexion.verificarUsuario(usuario, contrasenia);
+          ConsultaLogin consulta= new ConsultaLogin();
+            String mensaje = consulta.verificarUsuario(usuario, contrasenia);
             JOptionPane.showMessageDialog(this, mensaje);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);

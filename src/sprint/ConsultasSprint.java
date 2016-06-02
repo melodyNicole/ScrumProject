@@ -8,7 +8,7 @@ package sprint;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import login.Conexion;
+import scrumproject.Conexion;
 
 /**
  *
