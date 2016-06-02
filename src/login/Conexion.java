@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package login;
 
 import java.sql.Connection;
@@ -20,18 +16,25 @@ public class Conexion {
 
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/sis2";
+    private final Connection conexion;
 
-    public Connection getConnection() throws ClassNotFoundException, SQLException {
+    public Conexion() throws ClassNotFoundException, SQLException {
+        this("root", "nicolesql");
+    }
+
+    public Conexion(String usuarioBD, String contraseniaBD) throws ClassNotFoundException, SQLException {
         Class.forName(DRIVER);
-        Connection connection = DriverManager.getConnection(JDBC_URL, "root", "nicolesql");
-        return connection;
+        conexion = DriverManager.getConnection(JDBC_URL, usuarioBD, contraseniaBD);
+    }
+
+    public Statement getInstancia() throws SQLException {
+        return conexion.createStatement();
     }
 
     public String verificarUsuario(String usuario, String contrasenia) {
         String mensaje;
         try {
-            Connection conexion = getConnection();
-            Statement instancia = conexion.createStatement();
+            Statement instancia = getInstancia();
             String query = String.format("SELECT DISTINCT PASSWORD from "
                     + "login WHERE USER = \"%s\"", usuario);
             ResultSet result = instancia.executeQuery(query);
@@ -44,7 +47,7 @@ public class Conexion {
             } else {
                 mensaje = "Nombre de usuario invalido";
             }
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (SQLException ex) {
             mensaje = "Ocurrio un error al ingresar los datos";
         }
         return mensaje;

@@ -5,6 +5,9 @@
  */
 package login;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -113,9 +116,16 @@ public class Login extends javax.swing.JFrame {
     private void botonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEntrarMouseClicked
         String usuario = textUsuario.getText();
         String contrasenia = new String(textContrasenia.getPassword());
-        Conexion conexion = new Conexion();
-        String mensaje = conexion.verificarUsuario(usuario, contrasenia);
-        JOptionPane.showMessageDialog(this, mensaje);
+        Conexion conexion;
+        try {
+            conexion = new Conexion();
+            String mensaje = conexion.verificarUsuario(usuario, contrasenia);
+            JOptionPane.showMessageDialog(this, mensaje);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botonEntrarMouseClicked
 
     /**
