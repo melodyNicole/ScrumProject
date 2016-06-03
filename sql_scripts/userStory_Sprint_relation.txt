@@ -1,0 +1,11 @@
+/*Añadiendo nueva columna en historia de usuario*/
+
+alter table historiadeusuario 
+add column ID_SPRINT INTEGER ;
+
+
+/*relacionando */
+alter table historiadeusuario add constraint contiene foreign key (ID_SPRINT)
+      references SPRINT(ID_SPRINT) on delete restrict on update restrict;
+ 
+/* Realizar los sqls dentro de la base de datos */

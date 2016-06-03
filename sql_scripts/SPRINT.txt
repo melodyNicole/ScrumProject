@@ -1,0 +1,10 @@
+drop table if exists SPRINT;
+/* Table: SPRINT   */
+
+create table SPRINT
+(
+   ID_SPRINT            int not null,
+   FECHA_INICIO         date,
+   FECHA_FIN            date,
+   primary key (ID_SPRINT)
+);
