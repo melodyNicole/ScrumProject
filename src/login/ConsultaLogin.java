@@ -36,6 +36,7 @@ public class ConsultaLogin {
             } else {
                 mensaje = "Nombre de usuario invalido";
             }
+            conexion.cerrar();
         } catch (SQLException ex) {
             mensaje = "Ocurrio un error al ingresar los datos";
         }

@@ -29,5 +29,10 @@ public class Conexion {
     public Statement getInstancia() throws SQLException {
         return conexion.createStatement();
     }
+    
+    public void cerrar() throws SQLException  
+   {
+       conexion.close();
+   }
 
 }
