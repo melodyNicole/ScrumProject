@@ -21,6 +21,7 @@ public class CrearUserStory extends javax.swing.JPanel {
      */
     public CrearUserStory() {
         initComponents();
+        
     }
 
     /**
@@ -45,7 +46,11 @@ public class CrearUserStory extends javax.swing.JPanel {
         text_priori = new javax.swing.JTextField();
         boton_anadir = new javax.swing.JButton();
 
-        label_historia.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        setBackground(new java.awt.Color(204, 204, 204));
+        setForeground(new java.awt.Color(255, 255, 255));
+
+        label_historia.setBackground(new java.awt.Color(0, 102, 102));
+        label_historia.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         label_historia.setText("HISTORIA DE USUARIO");
 
         label_titulo.setText("TITULO:");
@@ -54,18 +59,23 @@ public class CrearUserStory extends javax.swing.JPanel {
 
         label_criterio.setText("CRITERIOS DE ACEPTACION: ");
 
+        text_titulo.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
+        text_titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        text_titulo.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         text_titulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_tituloActionPerformed(evt);
             }
         });
 
+        text_desc.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         text_desc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_descActionPerformed(evt);
             }
         });
 
+        text_criterio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         text_criterio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_criterioActionPerformed(evt);
@@ -76,19 +86,23 @@ public class CrearUserStory extends javax.swing.JPanel {
 
         label_priori.setText("PRIORIDAD");
 
+        text_comp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         text_comp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_compActionPerformed(evt);
             }
         });
 
+        text_priori.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         text_priori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_prioriActionPerformed(evt);
             }
         });
 
+        boton_anadir.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         boton_anadir.setText("Añadir");
+        boton_anadir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         boton_anadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton_anadirActionPerformed(evt);
@@ -108,11 +122,12 @@ public class CrearUserStory extends javax.swing.JPanel {
                             .addComponent(label_comp))
                         .addGap(54, 54, 54)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_priori)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(text_priori, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(72, 72, 72)
-                                .addComponent(boton_anadir))
-                            .addComponent(label_priori)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                                .addComponent(boton_anadir, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -153,8 +168,8 @@ public class CrearUserStory extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(text_comp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(text_priori, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boton_anadir, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addComponent(boton_anadir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

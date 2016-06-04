@@ -5,6 +5,7 @@
  */
 package scrumproject;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -22,31 +23,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
+
         super();
         initComponents();
         jMenuBar1.setVisible(false);
         login = new PanelLogin();
         userStory = new CrearUserStory();
-        login.setBounds(200, 150, 300, 200);
+        login.setBounds(220, 150, 300, 200);
         userStory.setBounds(150, 50, 500, 500);
         userStory.setVisible(false);
         login.aniadirControladorBoton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("esto esta una macana");
+               
                 removerPanel();
                 jMenuBar1.setVisible(true);
                 pack();
                 repaint();
-                
+
             }
         });
-        
+      
         add(login);
         add(userStory);
         pack();
-        
-        
+
     }
 
     public void removerPanel() {
@@ -69,16 +70,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Scrum Proyect");
+        setBackground(new java.awt.Color(204, 204, 204));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jMenu1.setText("File");
+        jMenu1.setBackground(new java.awt.Color(204, 204, 204));
+        jMenu1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu1.setText("Menu");
 
         jMenu3.setText("Historias de Usuario");
 
+        jMenuItem2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jMenuItem2.setText("Crear");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,17 +92,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
-        jMenuItem3.setText("Editar");
-        jMenu3.add(jMenuItem3);
-
-        jMenuItem4.setText("Eliminar");
-        jMenu3.add(jMenuItem4);
-
         jMenu1.add(jMenu3);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -110,7 +107,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 589, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
         );
 
         pack();
@@ -131,7 +128,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -152,6 +149,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public void run() {
 
                 VentanaPrincipal ventana = new VentanaPrincipal();
+                ventana.setLocationRelativeTo(null);
+                ventana.getContentPane().setBackground(new Color(204, 204, 204));
                 ventana.setVisible(true);
             }
         });
@@ -163,10 +162,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 private PanelLogin login;
-private CrearUserStory userStory;
+    private CrearUserStory userStory;
 
 }

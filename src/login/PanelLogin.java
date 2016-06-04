@@ -43,6 +43,8 @@ public class PanelLogin extends javax.swing.JPanel {
         loginBoton = new javax.swing.JButton();
         contraseniaTexto = new javax.swing.JPasswordField();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
         usuarioLabel.setText("Usuario:");
 
         contraseniaLabel.setText("Contraseña:");
@@ -54,6 +56,7 @@ public class PanelLogin extends javax.swing.JPanel {
         });
 
         loginBoton.setText("Entrar");
+        loginBoton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         loginBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBotonActionPerformed(evt);
@@ -70,14 +73,12 @@ public class PanelLogin extends javax.swing.JPanel {
                     .addComponent(usuarioLabel)
                     .addComponent(contraseniaLabel))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(usuarioTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                    .addComponent(contraseniaTexto))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
-                .addComponent(loginBoton)
-                .addGap(125, 125, 125))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(usuarioTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                        .addComponent(contraseniaTexto)))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,8 +92,8 @@ public class PanelLogin extends javax.swing.JPanel {
                     .addComponent(contraseniaLabel)
                     .addComponent(contraseniaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(loginBoton)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
