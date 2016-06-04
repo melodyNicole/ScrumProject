@@ -28,7 +28,7 @@ public class ConsultasSprint {
         String fechaInicio = sprint.getFechaInicio();
         String fechaFin = sprint.getFechaFin();
         String query;
-        query = String.format("INSERT INTO Sprints VALUES(\"%s\",\"%s\")", sprint.getFechaInicio(), sprint.getFechaFin());
+        query = String.format("INSERT INTO Sprints VALUES(\"%s\",\"%s\",\"%s\")",sprint.getNombre(), sprint.getFechaInicio(), sprint.getFechaFin());
         ResultSet result = instancia.executeQuery(query);
     }
 

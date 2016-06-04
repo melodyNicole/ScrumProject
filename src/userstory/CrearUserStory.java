@@ -51,13 +51,13 @@ public class CrearUserStory extends javax.swing.JPanel {
 
         label_historia.setBackground(new java.awt.Color(0, 102, 102));
         label_historia.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        label_historia.setText("HISTORIA DE USUARIO");
+        label_historia.setText("Historia de Usuario");
 
-        label_titulo.setText("TITULO:");
+        label_titulo.setText("Titulo:");
 
-        label_desc.setText("DESCRIPCION:");
+        label_desc.setText("Descripcion:");
 
-        label_criterio.setText("CRITERIOS DE ACEPTACION: ");
+        label_criterio.setText("Criterios de Aceptacion: ");
 
         text_titulo.setFont(new java.awt.Font("SansSerif", 0, 11)); // NOI18N
         text_titulo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -82,9 +82,9 @@ public class CrearUserStory extends javax.swing.JPanel {
             }
         });
 
-        label_comp.setText("COMPLEJIDAD");
+        label_comp.setText("Complejidad");
 
-        label_priori.setText("PRIORIDAD");
+        label_priori.setText("Prioridad");
 
         text_comp.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         text_comp.addActionListener(new java.awt.event.ActionListener() {
@@ -114,41 +114,41 @@ public class CrearUserStory extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(text_comp, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label_comp))
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_priori)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(text_priori, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                                .addComponent(boton_anadir, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(19, 19, 19))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(label_titulo)
-                            .addComponent(label_criterio)
-                            .addComponent(label_desc)
-                            .addComponent(text_criterio, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
-                            .addComponent(text_desc)
-                            .addComponent(text_titulo))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(127, 127, 127)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(text_comp, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_comp))
+                            .addGap(54, 54, 54)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label_priori)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(text_priori, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                                    .addComponent(boton_anadir, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(19, 19, 19))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(31, 31, 31)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(label_titulo)
+                                .addComponent(label_criterio)
+                                .addComponent(label_desc)
+                                .addComponent(text_criterio, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+                                .addComponent(text_desc)
+                                .addComponent(text_titulo))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(label_historia)))
                 .addContainerGap(32, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(label_historia)
-                .addGap(172, 172, 172))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(59, 59, 59)
                 .addComponent(label_historia)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(label_titulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(text_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)

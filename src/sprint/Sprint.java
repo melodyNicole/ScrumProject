@@ -10,14 +10,17 @@ package sprint;
  * @author Nicole
  */
 class Sprint {
-
+    private String nombre;
     private String fechaInicio;
     private String fechaFin;
 
-    public Sprint(String fechaInicio, String fechaFin) {
+    public Sprint(String nombre,String fechaInicio, String fechaFin) {
+        this.nombre=nombre;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
+
+  
     String getFechaInicio() {
         return fechaInicio;
     }
@@ -25,5 +28,7 @@ class Sprint {
     String getFechaFin() {
         return fechaFin;
     }
-    
+    String getNombre(){
+    return nombre;
+}
 }
