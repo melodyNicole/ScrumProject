@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 package tareas;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JMenuBar;
+
 /**
  *
  * @author Carla
@@ -139,7 +145,15 @@ public class Tareas extends javax.swing.JFrame {
 
     private void tareaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tareaButtonActionPerformed
         Tarea tarea =new Tarea(tituloText.getText(),descripcionText.getText());
-        //consultas para guardar la tarea
+        try {
+            ConsultaTareas guardarTarea=new ConsultaTareas();
+            guardarTarea.guardarTarea(tarea);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Tareas.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Tareas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_tareaButtonActionPerformed
 
     private void descripcionTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descripcionTextKeyTyped
@@ -182,10 +196,10 @@ public class Tareas extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tareas().setVisible(true);
-            }
+       java.awt.EventQueue.invokeLater(new Runnable() {
+           public void run() {
+              new Tareas().setVisible(true);
+           }
         });
     }
 
