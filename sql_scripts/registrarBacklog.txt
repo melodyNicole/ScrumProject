@@ -1,0 +1,12 @@
+drop table if exists REGISTAR_BACKLOG;
+
+/*==============================================================*/
+/* Table: REGISTAR_BACKLOG                                      */
+/*==============================================================*/
+create table REGISTAR_BACKLOG
+(
+   ID                   int not null,
+   NOMBRE               varchar(44) not null,
+   N_HISTORIAS          int not null,
+   primary key (ID)
+);
