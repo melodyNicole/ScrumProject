@@ -16,6 +16,7 @@ import login.DialogoLogin;
 
 import sprint.CrearSprintDialogo;
 import userstory.ConsultasUserStory;
+import userstory.ListaUserStory;
 
 import userstory.UserStoryDialogo;
 
@@ -36,9 +37,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         login = new DialogoLogin(this, true);
         userStory = new UserStoryDialogo(this, true);
         sprint = new CrearSprintDialogo(this, true);
-
+        listahistorias = new ListaUserStory(this, true);
         userStory.setVisible(false);
         sprint.setVisible(false);
+        listahistorias.setVisible(false);
         login.aniadirControladorBoton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,11 +107,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\icon-menu-hover.png")); // NOI18N
 
         jMenu3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu3.setForeground(new java.awt.Color(0, 153, 204));
+        jMenu3.setForeground(new java.awt.Color(102, 102, 102));
+        jMenu3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenu3.setText("Historias de Usuario");
+        jMenu3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jMenuItem2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem2.setForeground(new java.awt.Color(0, 153, 204));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenuItem2.setText("Crear Historia");
         jMenuItem2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +124,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
+        jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem3.setForeground(new java.awt.Color(0, 153, 204));
+        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenuItem3.setText("Ver Historias");
         jMenuItem3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -132,15 +139,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenu3);
 
         jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu4.setForeground(new java.awt.Color(0, 153, 204));
+        jMenu4.setForeground(new java.awt.Color(102, 102, 102));
+        jMenu4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenu4.setText("Sprints");
+        jMenu4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenu4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu4ActionPerformed(evt);
             }
         });
 
+        jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(0, 153, 204));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenuItem1.setText("Crear Sprint");
         jMenuItem1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -161,16 +172,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(576, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 386, Short.MAX_VALUE)
+                .addContainerGap(390, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -191,14 +202,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        try {
-            ConsultasUserStory consulta = new ConsultasUserStory();
-            System.out.println(consulta.ObtenerHistorias());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        listahistorias.setVisible(true);
+         userStory.setVisible(false);
+        sprint.setVisible(false);
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
@@ -254,7 +261,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private DialogoLogin login;
     private UserStoryDialogo userStory;
-
+    private ListaUserStory listahistorias;
     private CrearSprintDialogo sprint;
 
 }

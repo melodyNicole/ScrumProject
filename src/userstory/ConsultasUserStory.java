@@ -5,12 +5,14 @@
  */
 package userstory;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import scrumproject.Conexion;
+import java.sql.Connection;
 
 /**
  *
@@ -40,7 +42,7 @@ public class ConsultasUserStory {
     }
 
     public List<UserStory> ObtenerHistorias() throws SQLException {
-
+    
         List<UserStory> userStories = new ArrayList();
         Statement instancia;
         instancia = conexion.getInstancia();
@@ -63,5 +65,4 @@ public class ConsultasUserStory {
         }
         return userStories;
     }
-
 }

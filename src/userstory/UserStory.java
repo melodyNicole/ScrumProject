@@ -10,28 +10,27 @@ package userstory;
  * @author Nicole
  */
 public class UserStory {
-    
+
     private String titulo;
     private String descripcion;
     private String criteriosAceptacion;
     private int complejidad;
     private int prioridad;
 
-    public UserStory(String titulo,String descripcion,String criteriosAceptacion,int complejidad, int prioridad)
-    {
-       this.titulo=titulo;
-       this.descripcion=descripcion;
-       this.criteriosAceptacion=criteriosAceptacion;
-       this.complejidad=complejidad;
-       this.prioridad=prioridad;
+    public UserStory(String titulo, String descripcion, String criteriosAceptacion, int complejidad, int prioridad) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.criteriosAceptacion = criteriosAceptacion;
+        this.complejidad = complejidad;
+        this.prioridad = prioridad;
     }
-    
+
     String getTitulo() {
-      return titulo;
+        return titulo;
     }
 
     String getDescripcion() {
-       return descripcion;
+        return descripcion;
     }
 
     String getCriterios() {
@@ -45,7 +44,14 @@ public class UserStory {
     int getPrioridad() {
         return prioridad;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "titulo:" + titulo + "\n"
+                + "descripcion" + descripcion + "\n"
+                + "criterios de Aceptacion" + criteriosAceptacion + "\n"
+                + "complejidad" + complejidad + "\n"
+                + "prioridad" + prioridad + "\n";
+    }
+
 }
