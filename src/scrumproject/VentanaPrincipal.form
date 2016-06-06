@@ -3,6 +3,11 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="99" red="99" type="rgb"/>
+        </Property>
+      </Properties>
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
@@ -54,8 +59,6 @@
               </SubComponents>
             </Menu>
           </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
         </Menu>
       </SubComponents>
     </Menu>

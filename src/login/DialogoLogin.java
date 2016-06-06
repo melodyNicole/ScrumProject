@@ -6,26 +6,25 @@
 package login;
 
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.plaf.basic.BasicTabbedPaneUI;
 
 /**
  *
  * @author Nicole
  */
-public class PanelLogin extends javax.swing.JPanel {
+public class DialogoLogin extends javax.swing.JDialog {
 
     /**
-     * Creates new form PanelLogin
+     * Creates new form DialogoLogin
      */
-    public PanelLogin() {
+    public DialogoLogin(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
-        setVisible(true);
-        
+        this.setLocationRelativeTo(parent);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }
 
     /**
@@ -37,15 +36,14 @@ public class PanelLogin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        usuarioLabel = new javax.swing.JLabel();
         contraseniaLabel = new javax.swing.JLabel();
         usuarioTexto = new javax.swing.JTextField();
         loginBoton = new javax.swing.JButton();
         contraseniaTexto = new javax.swing.JPasswordField();
+        usuarioLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 204, 204));
-
-        usuarioLabel.setText("Usuario:");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login");
 
         contraseniaLabel.setText("Contraseña:");
 
@@ -63,8 +61,10 @@ public class PanelLogin extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        usuarioLabel.setText("Usuario:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -78,7 +78,7 @@ public class PanelLogin extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(usuarioTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                         .addComponent(contraseniaTexto)))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,8 +93,10 @@ public class PanelLogin extends javax.swing.JPanel {
                     .addComponent(contraseniaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void usuarioTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTextoActionPerformed
@@ -102,19 +104,68 @@ public class PanelLogin extends javax.swing.JPanel {
     }//GEN-LAST:event_usuarioTextoActionPerformed
 
     private void loginBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBotonActionPerformed
-          String usuario = usuarioTexto.getText();
+        String usuario = usuarioTexto.getText();
         String contrasenia = new String(contraseniaTexto.getPassword());
-        
-        try {
-          ConsultaLogin consulta= new ConsultaLogin();
-            String mensaje = consulta.verificarUsuario(usuario, contrasenia);
-            JOptionPane.showMessageDialog(this, mensaje);
-     
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(PanelLogin.class.getName()).log(Level.SEVERE, null, ex);
-        }          
-    }//GEN-LAST:event_loginBotonActionPerformed
 
+        try {
+            ConsultaLogin consulta = new ConsultaLogin();
+            boolean autenticado = consulta.verificarUsuario(usuario, contrasenia);
+            if (autenticado) {
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario no valido");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DialogoLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_loginBotonActionPerformed
+    public void aniadirControladorBoton(ActionListener al) {
+        loginBoton.addActionListener(al);
+
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(DialogoLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(DialogoLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(DialogoLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(DialogoLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                DialogoLogin dialog = new DialogoLogin(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel contraseniaLabel;
@@ -123,13 +174,4 @@ public class PanelLogin extends javax.swing.JPanel {
     private javax.swing.JLabel usuarioLabel;
     private javax.swing.JTextField usuarioTexto;
     // End of variables declaration//GEN-END:variables
-
-    public void aniadirControladorBoton(ActionListener al) {
-        loginBoton.addActionListener(al);
-        
-    }
-
-    public Object getBoton() {
-       return loginBoton;
-    }
 }

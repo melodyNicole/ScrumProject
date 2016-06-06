@@ -8,11 +8,12 @@ package scrumproject;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import login.PanelLogin;
-import sprint.CrearSprint;
-import userstory.CrearUserStory;
+import login.DialogoLogin;
+
+import sprint.CrearSprintDialogo;
+
+import userstory.UserStoryDialogo;
 
 /**
  *
@@ -28,18 +29,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         super();
         initComponents();
         jMenuBar1.setVisible(false);
-        login = new PanelLogin();
-        userStory = new CrearUserStory();
-        sprint = new CrearSprint();
-        login.setBounds(220, 150, 300, 200);
-        userStory.setBounds(150, 50, 500, 500);
-        sprint.setBounds(230, 150, 350, 200);
+        login = new DialogoLogin(this, true);
+        userStory = new UserStoryDialogo(this, true);
+        sprint = new CrearSprintDialogo(this, true);
+
         userStory.setVisible(false);
         sprint.setVisible(false);
         login.aniadirControladorBoton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               
+                
                 removerPanel();
                 jMenuBar1.setVisible(true);
                 pack();
@@ -47,10 +46,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
             }
         });
-      
-        add(login);
-        add(userStory);
-        add(sprint);
+
+        login.setVisible(true);
+
         pack();
 
     }
@@ -77,12 +75,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scrum Proyect");
         setBackground(new java.awt.Color(204, 204, 204));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jMenuBar1.setBackground(new java.awt.Color(153, 153, 153));
 
         jMenu1.setBackground(new java.awt.Color(204, 204, 204));
         jMenu1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -119,7 +118,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenu4);
 
         jMenuBar1.add(jMenu1);
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -137,19 +135,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        userStory.setVisible(true);
-        sprint.setVisible(false);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
         sprint.setVisible(true);
     }//GEN-LAST:event_jMenu4ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-         sprint.setVisible(true);
-         userStory.setVisible(false);
+        sprint.setVisible(true);
+        userStory.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        userStory.setVisible(true);
+        sprint.setVisible(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,7 +182,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
                 VentanaPrincipal ventana = new VentanaPrincipal();
                 ventana.setLocationRelativeTo(null);
+
                 ventana.getContentPane().setBackground(new Color(204, 204, 204));
+                
                 ventana.setVisible(true);
             }
         });
@@ -192,15 +192,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
-private PanelLogin login;
-    private CrearUserStory userStory;
-    private CrearSprint sprint;
+    private DialogoLogin login;
+    private UserStoryDialogo userStory;
+
+    private CrearSprintDialogo sprint;
 
 }

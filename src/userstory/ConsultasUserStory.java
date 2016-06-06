@@ -23,7 +23,7 @@ public class ConsultasUserStory {
         conexion = new Conexion();
     }
 
-    public void guardarHistoria(UserStory story) throws SQLException {
+    public int guardarHistoria(UserStory story) throws SQLException {
         Statement instancia;
         instancia = conexion.getInstancia();
         String titulo = story.getTitulo();
@@ -35,6 +35,7 @@ public class ConsultasUserStory {
         query = String.format("INSERT INTO historiadeusuario (titulo,descripcion,criteriosAceptacion,complejidad,prioridad) VALUES(\"%s\",\"%s\",\"%s\",%d,%d)",titulo,despripcion,criteriosDeAceptacion,complejidad,prioridad);
         int result = instancia.executeUpdate(query);
         System.out.println(result);
+        return result;
     }
     
 }

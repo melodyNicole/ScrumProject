@@ -25,7 +25,7 @@ public class ConsultasSprint {
         conexion = new Conexion();
     }
 
-    public void guardarSprint(Sprint sprint) throws SQLException {
+    public int guardarSprint(Sprint sprint) throws SQLException {
         Statement instancia;
         instancia = conexion.getInstancia();
         String query;
@@ -38,6 +38,7 @@ public class ConsultasSprint {
         //System.out.println(query);
        // ResultSet result = instancia.executeQuery(query);
         int result = p.executeUpdate();
+        return result;
     }
 
 }
