@@ -45,18 +45,30 @@ public class CrearSprintDialogo extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Crear Sprint");
 
-        FechaFinLabel.setText("Fecha Fin");
+        FechaFinLabel.setText("Fecha Fin:");
 
         NombreSprintLabel.setText("Nombre:");
 
+        NombreSprintTexto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        CrearBoton.setForeground(new java.awt.Color(0, 153, 204));
         CrearBoton.setText("Crear");
+        CrearBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CrearBotonActionPerformed(evt);
             }
         });
 
-        FechaInicioLabel.setText("Fecha Inicio");
+        FechaInicioJDate.setBackground(new java.awt.Color(153, 153, 153));
+        FechaInicioJDate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        FechaInicioJDate.setForeground(new java.awt.Color(0, 153, 204));
+
+        FechaFinJDate.setBackground(new java.awt.Color(153, 153, 153));
+        FechaFinJDate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        FechaFinJDate.setForeground(new java.awt.Color(0, 153, 204));
+
+        FechaInicioLabel.setText("Fecha Inicio:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,9 +92,9 @@ public class CrearSprintDialogo extends javax.swing.JDialog {
                                     .addComponent(FechaFinLabel)
                                     .addComponent(FechaFinJDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(CrearBoton)))
-                .addGap(0, 33, Short.MAX_VALUE))
+                        .addGap(145, 145, 145)
+                        .addComponent(CrearBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,9 +111,9 @@ public class CrearSprintDialogo extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechaInicioJDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FechaFinJDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(CrearBoton)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(CrearBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
