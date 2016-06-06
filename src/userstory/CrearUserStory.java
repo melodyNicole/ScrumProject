@@ -50,7 +50,7 @@ public class CrearUserStory extends javax.swing.JPanel {
         setForeground(new java.awt.Color(255, 255, 255));
 
         label_historia.setBackground(new java.awt.Color(0, 102, 102));
-        label_historia.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        label_historia.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         label_historia.setText("Historia de Usuario");
 
         label_titulo.setText("Titulo:");

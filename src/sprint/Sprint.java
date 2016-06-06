@@ -5,27 +5,29 @@
  */
 package sprint;
 
+import java.util.Date;
+
 /**
  *
  * @author Nicole
  */
 class Sprint {
     private String nombre;
-    private String fechaInicio;
-    private String fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
 
-    public Sprint(String nombre,String fechaInicio, String fechaFin) {
+    public Sprint(String nombre,Date fechaInicio, Date fechaFin) {
         this.nombre=nombre;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
 
   
-    String getFechaInicio() {
+    Date getFechaInicio() {
         return fechaInicio;
     }
 
-    String getFechaFin() {
+    Date getFechaFin() {
         return fechaFin;
     }
     String getNombre(){
