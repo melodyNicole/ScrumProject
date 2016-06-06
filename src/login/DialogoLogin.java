@@ -39,29 +39,55 @@ public class DialogoLogin extends javax.swing.JDialog {
         contraseniaLabel = new javax.swing.JLabel();
         usuarioTexto = new javax.swing.JTextField();
         loginBoton = new javax.swing.JButton();
-        contraseniaTexto = new javax.swing.JPasswordField();
         usuarioLabel = new javax.swing.JLabel();
+        contraseniaTexto = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
+        setBackground(java.awt.SystemColor.activeCaption);
 
-        contraseniaLabel.setText("Contraseña:");
+        contraseniaLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\login_icon.png")); // NOI18N
 
+        usuarioTexto.setForeground(new java.awt.Color(204, 204, 204));
+        usuarioTexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usuarioTexto.setText("User Name");
+        usuarioTexto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        usuarioTexto.setCaretColor(new java.awt.Color(0, 204, 255));
+        usuarioTexto.setDisabledTextColor(new java.awt.Color(102, 102, 102));
+        usuarioTexto.setName(""); // NOI18N
+        usuarioTexto.setSelectionColor(new java.awt.Color(153, 153, 153));
         usuarioTexto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioTextoActionPerformed(evt);
             }
         });
 
+        loginBoton.setBackground(new java.awt.Color(204, 204, 204));
+        loginBoton.setForeground(new java.awt.Color(0, 204, 255));
         loginBoton.setText("Entrar");
-        loginBoton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        loginBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         loginBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginBotonActionPerformed(evt);
             }
         });
 
-        usuarioLabel.setText("Usuario:");
+        usuarioLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\user-login.png")); // NOI18N
+        usuarioLabel.setMaximumSize(new java.awt.Dimension(300, 256));
+        usuarioLabel.setMinimumSize(new java.awt.Dimension(300, 256));
+
+        contraseniaTexto.setForeground(new java.awt.Color(204, 204, 204));
+        contraseniaTexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contraseniaTexto.setText("Password");
+        contraseniaTexto.setToolTipText("");
+        contraseniaTexto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        contraseniaTexto.setDisabledTextColor(new java.awt.Color(51, 204, 255));
+        contraseniaTexto.setSelectionColor(new java.awt.Color(153, 153, 153));
+        contraseniaTexto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseniaTextoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,30 +96,34 @@ public class DialogoLogin extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(usuarioLabel)
+                    .addComponent(usuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(contraseniaLabel))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(usuarioTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                        .addComponent(contraseniaTexto)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(usuarioTexto)
+                    .addComponent(contraseniaTexto, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(142, Short.MAX_VALUE)
+                .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usuarioLabel)
-                    .addComponent(usuarioTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contraseniaLabel)
-                    .addComponent(contraseniaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(usuarioTexto))
+                    .addComponent(usuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(contraseniaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(contraseniaTexto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(loginBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -120,6 +150,10 @@ public class DialogoLogin extends javax.swing.JDialog {
             Logger.getLogger(DialogoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_loginBotonActionPerformed
+
+    private void contraseniaTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniaTextoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseniaTextoActionPerformed
     public void aniadirControladorBoton(ActionListener al) {
         loginBoton.addActionListener(al);
 
