@@ -59,6 +59,7 @@ public class ConsultasUserStory {
                 int complejidad = result.getInt("complejidad");
                 int prioridad = result.getInt("prioridad");
                 UserStory userStory = new UserStory(titulo, descripcion, criterio, complejidad, prioridad);
+                userStory.setId(id);
                 userStories.add(userStory);
                 result.next();
             } while (!result.isLast());
