@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tareas;
 
 import historiaUsuario.ConsultasUserStory;
+import historiaUsuario.UserStory;
+import java.awt.Frame;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import sprint.ConsultasSprint;
-import sprint.CrearSprintDialogo;
 
 /**
  *
@@ -21,11 +17,12 @@ public class VentanaTareas extends javax.swing.JDialog {
 
     /**
      * Creates new form VentanaTareas
+     * @param parent
+     * @param modal
      */
-    public VentanaTareas(java.awt.Frame parent, boolean modal) {
+    public VentanaTareas(Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.setLocationRelativeTo(parent);
     }
 
     /**
@@ -88,7 +85,7 @@ public class VentanaTareas extends javax.swing.JDialog {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(getHistoriasdeUsuario()));
+        jComboBox1.setModel(new UserStoryListModel(getHistoriasDeUsuario()));
 
         jLabel1.setText("Historia de Usuario:");
 
@@ -156,25 +153,24 @@ public class VentanaTareas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tareaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tareaButtonActionPerformed
-        Tarea tarea =new Tarea(tituloText.getText(),descripcionText.getText());
+        Tarea tarea = new Tarea(tituloText.getText(), descripcionText.getText());
         try {
-            ConsultaTareas guardarTarea=new ConsultaTareas();
-            int result=guardarTarea.guardarTarea(tarea);
-            if(result==1)
-            JOptionPane.showMessageDialog(null," TareaCreada");
+            ConsultaTareas guardarTarea = new ConsultaTareas();
+            int result = guardarTarea.guardarTarea(tarea);
+            if (result == 1) {
+                JOptionPane.showMessageDialog(null, " TareaCreada");
+            }
             this.dispose();
             limpiarCampos();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VentanaTareas.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(VentanaTareas.class.getName()).log(Level.SEVERE, null, ex);
         }
-                              
-
     }//GEN-LAST:event_tareaButtonActionPerformed
 
     private void descripcionTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descripcionTextKeyTyped
-        if( descripcionText.getText().length()==100)  evt.consume();
+        if (descripcionText.getText().length() == 100) {
+            evt.consume();
+        }
     }//GEN-LAST:event_descripcionTextKeyTyped
 
     private void tituloTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloTextActionPerformed
@@ -182,24 +178,27 @@ public class VentanaTareas extends javax.swing.JDialog {
     }//GEN-LAST:event_tituloTextActionPerformed
 
     private void tituloTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tituloTextKeyTyped
-        if( tituloText.getText().length()==48)  evt.consume();
+        if (tituloText.getText().length() == 48) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tituloTextKeyTyped
-    /* 
-    private String[][] getHistoriasdeUsuario() throws ClassNotFoundException, SQLException
-     {
-         Lista 
-         ConsultasUserStory consulta = new ConsultasUserStory();
-         =consulta.ObtenerHistorias();
-     }
-    */
-     private void limpiarCampos()
-     {
+
+    private List<UserStory> getHistoriasDeUsuario() {
+        List<UserStory> historiasDeUsuario = null;
+        try {
+            ConsultasUserStory consulta = new ConsultasUserStory();
+            historiasDeUsuario = consulta.ObtenerHistorias();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(VentanaTareas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return historiasDeUsuario;
+    }
+
+    private void limpiarCampos() {
         tituloText.setText("");
         descripcionText.setText("");
-       
-       
-     }
-    
+    }
+
     /**
      * @param args the command line arguments
      */
