@@ -103,7 +103,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem2.setForeground(new java.awt.Color(0, 153, 153));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         jMenuItem2.setText("Crear Historia");
         jMenuItem2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +115,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem3.setForeground(new java.awt.Color(0, 153, 153));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         jMenuItem3.setText("Ver Historias");
         jMenuItem3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +129,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenu4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu4.setForeground(new java.awt.Color(102, 102, 102));
-        jMenu4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         jMenu4.setText("Sprints");
         jMenu4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenu4.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +140,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(0, 153, 153));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         jMenuItem1.setText("Crear Sprint");
         jMenuItem1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -154,13 +154,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         tareasMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tareasMenu.setForeground(new java.awt.Color(102, 102, 102));
-        tareasMenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        tareasMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         tareasMenu.setText("Tareas");
         tareasMenu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jMenuItem5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jMenuItem5.setForeground(new java.awt.Color(0, 153, 153));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         jMenuItem5.setText("Crear Tarea");
         jMenuItem5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
