@@ -1,21 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package scrumproject;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import login.DialogoLogin;
 
 import sprint.CrearSprintDialogo;
-import historiaUsuario.ConsultasUserStory;
 import historiaUsuario.ListaUserStory;
 import historiaUsuario.UserStoryDialogo;
 import tareas.VentanaTareas;
@@ -33,39 +22,28 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         super();
         initComponents();
-        jMenuBar1.setVisible(false);
         login = new DialogoLogin(this, true);
+        login.setVisible(true);
         userStory = new UserStoryDialogo(this, true);
         sprint = new CrearSprintDialogo(this, true);
         listahistorias = new ListaUserStory(this, true);
         tareas = new VentanaTareas(this, true);
+        tareas.setLocationRelativeTo(this);
         userStory.setVisible(false);
         sprint.setVisible(false);
         listahistorias.setVisible(false);
         tareas.setVisible(false);
+
         login.aniadirControladorBoton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                removerPanel();
+                remove(login);
                 jMenuBar1.setVisible(true);
                 pack();
                 repaint();
 
             }
         });
-
-        login.setVisible(true);
-
-        pack();
-
-    }
-
-    public void removerPanel() {
-
-        remove(login);
-        repaint();
-        pack();
     }
 
     /**
@@ -287,7 +265,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
                 VentanaPrincipal ventana = new VentanaPrincipal();
                 ventana.setLocationRelativeTo(null);
-
+                ventana.pack();
                 ventana.setVisible(true);
             }
         });
