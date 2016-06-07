@@ -153,7 +153,8 @@ public class VentanaTareas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tareaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tareaButtonActionPerformed
-        Tarea tarea = new Tarea(tituloText.getText(), descripcionText.getText());
+        Tarea tarea = new Tarea(tituloText.getText(), descripcionText.getText(), (UserStory) jComboBox1.getSelectedItem());
+        
         try {
             ConsultaTareas guardarTarea = new ConsultaTareas();
             int result = guardarTarea.guardarTarea(tarea);

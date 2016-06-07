@@ -7,7 +7,6 @@ package tareas;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
 import scrumproject.Conexion;
 
 /**
@@ -26,8 +25,9 @@ public class ConsultaTareas {
         instancia = conexion.getInstancia();
         String titulo = tarea.getTitulo();
         String despripcion = tarea.getDescripcion();
+        Long historiaUsuarioId = tarea.getHistoriaUsuario().getId();
         String query;
-        query = String.format("INSERT INTO tarea (titulo,descripcion) VALUES(\"%s\",\"%s\")",titulo,despripcion);
+        query = String.format("INSERT INTO tarea (titulo,descripcion,historiaUsuarioId) VALUES(\"%s\",\"%s\",%d)",titulo,despripcion,historiaUsuarioId);
         int result = instancia.executeUpdate(query);
        
         return result;

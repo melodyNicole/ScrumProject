@@ -5,21 +5,33 @@
  */
 package tareas;
 
+import historiaUsuario.UserStory;
+
 /**
  *
  * @author Carla
  */
 public class Tarea {
-      private String titulo;
-      private String descripcion;
-      public Tarea(String titulo,String descripcion){
-        this.titulo=titulo;
-        this.descripcion=descripcion;
-     }
-      public String getTitulo(){
+
+    private String titulo;
+    private String descripcion;
+    private UserStory historiaUsuario;
+
+    public Tarea(String titulo, String descripcion, UserStory historiaUsuario) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.historiaUsuario = historiaUsuario;
+    }
+
+    public String getTitulo() {
         return titulo;
-      }
-      public String getDescripcion(){
-         return descripcion;
-      }
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public UserStory getHistoriaUsuario() {
+        return historiaUsuario;
+    }
 }
