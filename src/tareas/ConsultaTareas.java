@@ -20,7 +20,7 @@ public class ConsultaTareas {
      public ConsultaTareas()throws ClassNotFoundException, SQLException { 
          conexion=new Conexion();
      }
-      public void guardarTarea(Tarea tarea) throws SQLException
+      public int guardarTarea(Tarea tarea) throws SQLException
       {
        Statement instancia;
         instancia = conexion.getInstancia();
@@ -29,6 +29,7 @@ public class ConsultaTareas {
         String query;
         query = String.format("INSERT INTO tarea (titulo,descripcion) VALUES(\"%s\",\"%s\")",titulo,despripcion);
         int result = instancia.executeUpdate(query);
-        if(result==1) JOptionPane.showMessageDialog(null," TAREA GUARDADA");
+       
+        return result;
       }
 }

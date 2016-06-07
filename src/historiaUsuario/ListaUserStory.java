@@ -1,4 +1,4 @@
-package userstory;
+package historiaUsuario;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -39,6 +39,7 @@ public class ListaUserStory extends javax.swing.JDialog {
         setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         UserTabla.setModel(new UserStoryTableModel(getHistoriasDeUsuario()));
+        UserTabla.setGridColor(new java.awt.Color(0, 153, 153));
         jScrollPane1.setViewportView(UserTabla);
 
         Historias_text.setText("Historias de Usuario:");

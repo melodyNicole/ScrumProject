@@ -51,7 +51,7 @@ public class CrearSprintDialogo extends javax.swing.JDialog {
 
         NombreSprintTexto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        CrearBoton.setForeground(new java.awt.Color(0, 153, 204));
+        CrearBoton.setForeground(new java.awt.Color(0, 153, 153));
         CrearBoton.setText("Crear");
         CrearBoton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CrearBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -62,11 +62,11 @@ public class CrearSprintDialogo extends javax.swing.JDialog {
 
         FechaInicioJDate.setBackground(new java.awt.Color(153, 153, 153));
         FechaInicioJDate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        FechaInicioJDate.setForeground(new java.awt.Color(0, 153, 204));
+        FechaInicioJDate.setForeground(new java.awt.Color(0, 153, 153));
 
         FechaFinJDate.setBackground(new java.awt.Color(153, 153, 153));
         FechaFinJDate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        FechaFinJDate.setForeground(new java.awt.Color(0, 153, 204));
+        FechaFinJDate.setForeground(new java.awt.Color(0, 153, 153));
 
         FechaInicioLabel.setText("Fecha Inicio:");
 
@@ -104,9 +104,9 @@ public class CrearSprintDialogo extends javax.swing.JDialog {
                     .addComponent(NombreSprintLabel)
                     .addComponent(NombreSprintTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FechaInicioLabel)
-                    .addComponent(FechaFinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(FechaFinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FechaInicioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FechaInicioJDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

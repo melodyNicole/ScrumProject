@@ -8,16 +8,23 @@ package tareas;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
+import sprint.ConsultasSprint;
+import sprint.CrearSprintDialogo;
 
 /**
  *
- * @author Carla
+ * @author Nicole
  */
-public class Tareas extends javax.swing.JFrame {
-    public Tareas() {
+public class VentanaTareas extends javax.swing.JDialog {
+
+    /**
+     * Creates new form VentanaTareas
+     */
+    public VentanaTareas(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
-        descripcionText.setLineWrap(true);
+        this.setLocationRelativeTo(parent);
     }
 
     /**
@@ -30,7 +37,6 @@ public class Tareas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        tareaLabel = new javax.swing.JLabel();
         tituloLabel = new javax.swing.JLabel();
         descripcionLabel = new javax.swing.JLabel();
         tareaButton = new javax.swing.JButton();
@@ -38,21 +44,20 @@ public class Tareas extends javax.swing.JFrame {
         descripcionText = new javax.swing.JTextArea();
         tituloText = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(531, 503));
 
-        tareaLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        tareaLabel.setText(" TAREA");
-
         tituloLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        tituloLabel.setText("TITULO");
+        tituloLabel.setText("Titulo:");
 
         descripcionLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        descripcionLabel.setText("DESCRIPCION");
+        descripcionLabel.setText("Descripcion:");
 
         tareaButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        tareaButton.setText("CREAR TAREA");
+        tareaButton.setForeground(new java.awt.Color(0, 153, 153));
+        tareaButton.setText("Crear");
+        tareaButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tareaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tareaButtonActionPerformed(evt);
@@ -87,46 +92,34 @@ public class Tareas extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(tareaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(descripcionLabel)
-                            .addComponent(tituloLabel))
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tituloText)
-                            .addComponent(scrollDescripText, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(tareaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(58, Short.MAX_VALUE))
+                    .addComponent(descripcionLabel)
+                    .addComponent(tituloLabel))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tituloText)
+                    .addComponent(scrollDescripText, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tareaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tituloText, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tituloText, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(tareaLabel)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(descripcionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(scrollDescripText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(65, 65, 65)
-                .addComponent(tareaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(descripcionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollDescripText, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(tareaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -135,12 +128,12 @@ public class Tareas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
         );
 
         pack();
@@ -150,17 +143,22 @@ public class Tareas extends javax.swing.JFrame {
         Tarea tarea =new Tarea(tituloText.getText(),descripcionText.getText());
         try {
             ConsultaTareas guardarTarea=new ConsultaTareas();
-            guardarTarea.guardarTarea(tarea);
+            int result=guardarTarea.guardarTarea(tarea);
+            if(result==1)
+            JOptionPane.showMessageDialog(null," TareaCreada");
+            this.dispose();
+            limpiarCampos();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Tareas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VentanaTareas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Tareas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VentanaTareas.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+                              
+
     }//GEN-LAST:event_tareaButtonActionPerformed
 
     private void descripcionTextKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descripcionTextKeyTyped
-      if( descripcionText.getText().length()==100)  evt.consume();
+        if( descripcionText.getText().length()==100)  evt.consume();
     }//GEN-LAST:event_descripcionTextKeyTyped
 
     private void tituloTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloTextActionPerformed
@@ -171,6 +169,14 @@ public class Tareas extends javax.swing.JFrame {
         if( tituloText.getText().length()==48)  evt.consume();
     }//GEN-LAST:event_tituloTextKeyTyped
 
+     private void limpiarCampos()
+     {
+        tituloText.setText("");
+        descripcionText.setText("");
+       
+       
+     }
+    
     /**
      * @param args the command line arguments
      */
@@ -188,21 +194,28 @@ public class Tareas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaTareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaTareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaTareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaTareas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
-       java.awt.EventQueue.invokeLater(new Runnable() {
-           public void run() {
-              new Tareas().setVisible(true);
-           }
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                VentanaTareas dialog = new VentanaTareas(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
         });
     }
 
@@ -212,7 +225,6 @@ public class Tareas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane scrollDescripText;
     private javax.swing.JButton tareaButton;
-    private javax.swing.JLabel tareaLabel;
     private javax.swing.JLabel tituloLabel;
     private javax.swing.JTextField tituloText;
     // End of variables declaration//GEN-END:variables

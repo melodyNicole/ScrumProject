@@ -15,10 +15,10 @@ import java.util.logging.Logger;
 import login.DialogoLogin;
 
 import sprint.CrearSprintDialogo;
-import userstory.ConsultasUserStory;
-import userstory.ListaUserStory;
-
-import userstory.UserStoryDialogo;
+import historiaUsuario.ConsultasUserStory;
+import historiaUsuario.ListaUserStory;
+import historiaUsuario.UserStoryDialogo;
+import tareas.VentanaTareas;
 
 /**
  *
@@ -38,13 +38,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         userStory = new UserStoryDialogo(this, true);
         sprint = new CrearSprintDialogo(this, true);
         listahistorias = new ListaUserStory(this, true);
+        tareas = new VentanaTareas(this, true);
         userStory.setVisible(false);
         sprint.setVisible(false);
         listahistorias.setVisible(false);
+        tareas.setVisible(false);
         login.aniadirControladorBoton(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
                 removerPanel();
                 jMenuBar1.setVisible(true);
                 pack();
@@ -75,7 +77,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -83,6 +87,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        tareasMenu = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Scrum Proyect");
@@ -94,6 +103,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\scrum-gico04.png")); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(200, 200));
         jLabel1.setMinimumSize(new java.awt.Dimension(200, 200));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel2.setText("Scrum Project");
 
         jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
         jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -113,7 +126,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         jMenuItem2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(0, 153, 204));
+        jMenuItem2.setForeground(new java.awt.Color(0, 153, 153));
         jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenuItem2.setText("Crear Historia");
         jMenuItem2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -125,7 +138,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu3.add(jMenuItem2);
 
         jMenuItem3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jMenuItem3.setForeground(new java.awt.Color(0, 153, 204));
+        jMenuItem3.setForeground(new java.awt.Color(0, 153, 153));
         jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenuItem3.setText("Ver Historias");
         jMenuItem3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -150,7 +163,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jMenuItem1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jMenuItem1.setForeground(new java.awt.Color(0, 153, 204));
+        jMenuItem1.setForeground(new java.awt.Color(0, 153, 153));
         jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
         jMenuItem1.setText("Crear Sprint");
         jMenuItem1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -163,6 +176,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenu1.add(jMenu4);
 
+        tareasMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tareasMenu.setForeground(new java.awt.Color(102, 102, 102));
+        tareasMenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        tareasMenu.setText("Tareas");
+        tareasMenu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        jMenuItem5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jMenuItem5.setForeground(new java.awt.Color(0, 153, 153));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenuItem5.setText("Crear Tarea");
+        jMenuItem5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        tareasMenu.add(jMenuItem5);
+
+        jMenu1.add(tareasMenu);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -172,16 +205,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(576, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(579, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(390, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap(385, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -203,10 +242,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         listahistorias.setVisible(true);
-         userStory.setVisible(false);
+        userStory.setVisible(false);
         sprint.setVisible(false);
-        
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        listahistorias.setVisible(false);
+        userStory.setVisible(false);
+        sprint.setVisible(false);
+        tareas.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,15 +288,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 VentanaPrincipal ventana = new VentanaPrincipal();
                 ventana.setLocationRelativeTo(null);
 
-              
-                
                 ventana.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -258,10 +304,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenu tareasMenu;
     // End of variables declaration//GEN-END:variables
     private DialogoLogin login;
     private UserStoryDialogo userStory;
     private ListaUserStory listahistorias;
     private CrearSprintDialogo sprint;
+    private VentanaTareas tareas;
 
 }
