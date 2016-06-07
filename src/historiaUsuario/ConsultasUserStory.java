@@ -52,6 +52,7 @@ public class ConsultasUserStory {
 
         if (result.first()) {
             do {
+                Long id = result.getLong("idhistoriadeusuario");
                 String titulo = result.getString("titulo");
                 String descripcion = result.getString("descripcion");
                 String criterio = result.getString("criteriosAceptacion");
