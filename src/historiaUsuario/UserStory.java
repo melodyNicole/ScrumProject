@@ -11,6 +11,7 @@ package historiaUsuario;
  */
 public class UserStory {
 
+    private Long id;
     private String titulo;
     private String descripcion;
     private String criteriosAceptacion;
@@ -25,33 +26,32 @@ public class UserStory {
         this.prioridad = prioridad;
     }
 
-    String getTitulo() {
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
         return titulo;
     }
 
-    String getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    String getCriterios() {
+    public String getCriterios() {
         return criteriosAceptacion;
     }
 
-    int getComplejidad() {
+    public int getComplejidad() {
         return complejidad;
     }
 
-    int getPrioridad() {
+    public int getPrioridad() {
         return prioridad;
     }
 
     @Override
     public String toString() {
-        return "titulo:" + titulo + "\n"
-                + "descripcion" + descripcion + "\n"
-                + "criterios de Aceptacion" + criteriosAceptacion + "\n"
-                + "complejidad" + complejidad + "\n"
-                + "prioridad" + prioridad + "\n";
+        return titulo;
     }
-
 }
