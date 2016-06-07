@@ -46,7 +46,7 @@ public class DialogoLogin extends javax.swing.JDialog {
         setTitle("Login");
         setBackground(java.awt.SystemColor.activeCaption);
 
-        contraseniaLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\login_icon.png")); // NOI18N
+        contraseniaLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/login_icon.png"))); // NOI18N
 
         usuarioTexto.setForeground(new java.awt.Color(204, 204, 204));
         usuarioTexto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -72,7 +72,7 @@ public class DialogoLogin extends javax.swing.JDialog {
             }
         });
 
-        usuarioLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\user-login.png")); // NOI18N
+        usuarioLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/user-login.png"))); // NOI18N
         usuarioLabel.setMaximumSize(new java.awt.Dimension(300, 256));
         usuarioLabel.setMinimumSize(new java.awt.Dimension(300, 256));
 

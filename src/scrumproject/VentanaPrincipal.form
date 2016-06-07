@@ -39,7 +39,7 @@
               <Color blue="99" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Nicole\Documents\NetBeansProjects\ScrumProject\imagenes\icon-menu-hover.png"/>
+              <Image iconType="3" name="/scrumproject/btnMenu.png"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -54,7 +54,7 @@
                   <Color blue="66" green="66" red="66" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nicole\Documents\NetBeansProjects\ScrumProject\imagenes\asd-scrum.png"/>
+                  <Image iconType="3" name="/scrumproject/asd-scrum.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Historias de Usuario"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -267,7 +267,7 @@
           <Color blue="c8" green="c8" red="c8" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Nicole\Documents\NetBeansProjects\ScrumProject\imagenes\scrum-gico04.png"/>
+          <Image iconType="3" name="/scrumproject/scrum-gico04.png"/>
         </Property>
       </Properties>
     </Component>

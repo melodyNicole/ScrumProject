@@ -78,9 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel1.setBackground(new java.awt.Color(200, 200, 200));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\scrum-gico04.png")); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(200, 200));
-        jLabel1.setMinimumSize(new java.awt.Dimension(200, 200));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/scrum-gico04.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
@@ -95,11 +93,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.setBackground(new java.awt.Color(204, 204, 204));
         jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu1.setForeground(new java.awt.Color(0, 102, 153));
-        jMenu1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\icon-menu-hover.png")); // NOI18N
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/btnMenu.png"))); // NOI18N
 
         jMenu3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu3.setForeground(new java.awt.Color(102, 102, 102));
-        jMenu3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nicole\\Documents\\NetBeansProjects\\ScrumProject\\imagenes\\asd-scrum.png")); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/scrumproject/asd-scrum.png"))); // NOI18N
         jMenu3.setText("Historias de Usuario");
         jMenu3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -185,7 +183,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
